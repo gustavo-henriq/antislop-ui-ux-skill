@@ -1,4 +1,4 @@
-# deslop — take the "AI slop" out of an interface
+# take the "AI slop" out of an interface
 
 A skill (Claude Code, Codex, OpenCode) that **de-slops an existing screen**, or **builds a new one without the AI-generated look**.
 
