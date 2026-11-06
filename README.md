@@ -1,108 +1,84 @@
-# deslop — tira o "AI slop" de uma interface
+# deslop — take the "AI slop" out of an interface
 
-Uma skill (Claude Code, Codex, OpenCode) que **desalopa uma tela que já existe**, ou **cria uma tela nova sem cara de IA**.
+A skill (Claude Code, Codex, OpenCode) that **de-slops an existing screen**, or **builds a new one without the AI-generated look**.
 
-"AI slop" é aquele visual que parece montado por quem não usa o produto: todos os blocos com o mesmo peso, texto explicando o que um desenho mostraria, ações repetidas, degradê/glass/glow por decoração. O objetivo desta skill é que **cada elemento exista por um motivo que o usuário perceba**.
+"AI slop" is a screen that looks assembled by someone who doesn't use the product: every block with the same visual weight, text explaining what a drawing would show, repeated actions, gradients/glass/glow used as decoration. The goal is for **every element to exist for a reason the user can feel**.
 
 ---
 
-## Antes e depois
+## Before and after
 
-A mesma peça, de dois jeitos — à esquerda o padrão que a IA reproduz por hábito ("AI slop"), à direita a correção. Algumas das regras do sistema:
+The full gallery — every pattern the system flags, side by side with the fix (slop on the left in red, correction on the right in green):
 
-**1. Degradê em tudo**
+![Full gallery — 20 slop × correction pairs](docs/galeria-completa.png)
 
-![Regra 1 — Degradê em tudo](docs/pares/01.png)
+One image per rule is also in [`docs/pares/`](docs/pares/), and the whole gallery is rendered in [`anti-slop/galeria.html`](anti-slop/galeria.html) (open it in a browser).
 
-**2. Glow em tudo × glow focal**
+---
 
-![Regra 2 — Glow em tudo × glow focal](docs/pares/02.png)
+## What it does
 
-**3. Ícone em quadrado tingido**
+- **De-slop** a screen that already exists (app, Figma, or a prototype it just made).
+- **Build from scratch** a new screen without inheriting the AI look.
+- **Ask before deciding** — intent, screen role, visuals, priorities. That's the main differentiator.
+- **Search references with a cheap subagent** — it browses curated sources, takes screenshots, and returns only the outline; the main agent decides and applies (anti-token protocol).
+- **Propose thematic effects** tied to the product's universe (a stars app gets constellations, a music app gets a waveform).
+- **Run layered checks**: signal audit, aesthetic checklist, redundancy test, "outside look", second pass.
 
-![Regra 3 — Ícone em quadrado](docs/pares/03.png)
+## How it works (the loop)
 
-**9. Vidro de IA × vidro real**
+1. Read the project's taste (`gosto.md`) and rules (`receitas.md`).
+2. Spot the slop signals, pointing each one in place.
+3. Ask, propose a **grayscale wireframe**, and only then implement.
+4. Self-contained **HTML** prototype (base64 images, real states).
+5. Double check + outside look + second pass, and report what it found.
 
-![Regra 9 — Vidro de IA × vidro real](docs/pares/09.png)
-
-**17. Look "shadcn / default SaaS"**
-
-![Regra 17 — Look shadcn](docs/pares/17.png)
-
-**18. Esqueleto padrão de landing**
-
-![Regra 18 — Esqueleto de landing](docs/pares/18.png)
-
-**20. Ícones genéricos × SVGs próprios**
-
-![Regra 20 — Ícones genéricos](docs/pares/20.png)
-
-São 20 regras no total — uma imagem por regra em [`docs/pares/`](docs/pares/), e o acervo completo renderizado em [`anti-slop/galeria.html`](anti-slop/galeria.html) (abra no navegador).
-
-## O que a skill faz
-
-- **Desalopar** uma tela que existe (app, Figma ou um protótipo que ela mesma acabou de fazer).
-- **Criar do zero** uma tela nova, sem herdar a cara de IA.
-- **Perguntar antes de decidir** — intenção, papel da tela, visual, prioridades. É o principal diferencial.
-- **Buscar referências com subagente barato** — navega nas fontes curadas, tira prints e devolve só o roteiro; a IA principal decide e aplica (protocolo anti-token).
-- **Propor efeitos temáticos** ligados ao universo do produto (um app de estrelas ganha constelações, um de música ganha forma de onda).
-- **Rodar checagens em camadas**: auditoria de sinais, checklist de estética, teste de redundância, "olhar de fora", segunda checagem.
-
-## Como funciona (o ciclo)
-
-1. Lê o gosto (`gosto.md`) e a régua (`receitas.md`) do projeto.
-2. Identifica os sinais de slop, apontando cada um no lugar.
-3. Pergunta, propõe um **wireframe cinza**, e só então implementa.
-4. Protótipo em **HTML** autocontido (imagens em base64, estados reais).
-5. Dupla checagem + olhar de fora + segunda checagem, e lista o que achou.
-
-## Estrutura
+## Structure
 
 ```
 deslop/
-├── SKILL.md                  # o núcleo: o ciclo e as regras
-├── estetica-ia.md            # checklist rápido (12 sinais, com CSS e "quando é legítimo")
-├── tipografia.md             # fontes sem cara de IA (indie, sem serifa, neutras que passam)
-├── vidro.md                  # glassmorphism real × vidro de IA (com receitas CSS)
-├── componentes.md            # anatomia de tabela, métrica, gráfico, chat, formulário
-├── fontes-de-referencia.md   # fontes curadas (Mobbin, 60fps, Land-book, Godly, …)
-├── gosto.md                  # template: escolhas e recusas do projeto
-├── receitas.md               # template: paleta, superfícies e componentes
+├── SKILL.md                  # the core: the loop and the rules
+├── estetica-ia.md            # quick checklist (12 signals, with CSS and "when it's legitimate")
+├── tipografia.md             # fonts without the AI look (indie, no serif, neutrals that pass)
+├── vidro.md                  # real glassmorphism × AI glass (with CSS recipes)
+├── componentes.md            # anatomy of table, metric, chart, chat, form
+├── fontes-de-referencia.md   # curated sources (Mobbin, 60fps, Land-book, Godly, …)
+├── gosto.md                  # template: the project's choices and rejections
+├── receitas.md               # template: palette, surfaces and components
 ├── anti-slop/
-│   ├── catalogo.md           # 80+ padrões em categorias (com fontes)
-│   ├── galeria.html          # 20 pares slop × correção, renderizados
-│   └── referencias/          # exemplos reais de slop (templates "AI SaaS")
-├── inspiracao/               # referências boas curadas, por tema (landing, motion, dark…)
-└── docs/                     # imagens: showcase, galeria e pares individuais
+│   ├── catalogo.md           # 80+ patterns in categories (with sources)
+│   ├── galeria.html          # 20 slop × correction pairs, rendered
+│   └── referencias/          # real slop examples ("AI SaaS" templates)
+├── inspiracao/               # curated good references, by theme (landing, motion, dark…)
+└── docs/                     # images: full gallery and one image per rule
 ```
 
-## Acervo anti-slop
+## Anti-slop collection
 
-- **`catalogo.md`** — 80+ padrões de "AI slop" e problemas de qualidade, em 10 categorias (tipografia, cor, layout, movimento, copy…), cada um com o que denuncia e a correção.
-- **`estetica-ia.md`** — o checklist de 12 sinais que se roda em toda tela.
-- **`galeria.html`** — a versão visual: cada sinal em par **slop × correção**, lado a lado.
+- **`catalogo.md`** — 80+ "AI slop" patterns and quality issues, in 10 categories (typography, color, layout, motion, copy…), each with what gives it away and the fix.
+- **`estetica-ia.md`** — the 12-signal checklist to run on every screen.
+- **`galeria.html`** — the visual version: each signal as a **slop × correction** pair, side by side.
 
-## Como instalar
+## Install
 
 ### Claude Code
 
-Copie a pasta da skill para o projeto:
+Copy the skill folder into the project:
 
 ```bash
-cp -r skills/deslop meu-app/.claude/skills/deslop
+cp -r skills/deslop my-app/.claude/skills/deslop
 ```
 
-Depois preencha `gosto.md` e `receitas.md` na pasta do projeto (são templates). O resto mora na skill.
+Then fill in `gosto.md` and `receitas.md` in the project's folder (they are templates). Everything else lives in the skill.
 
 ### Codex / OpenCode
 
-Mesma ideia: coloque a pasta em `skills/deslop` (ou no diretório de skills do agente) e aponte `gosto.md`/`receitas.md` para o projeto.
+Same idea: place the folder in `skills/deslop` (or the agent's skills directory) and point `gosto.md`/`receitas.md` to the project.
 
-## Por que só `gosto.md` e `receitas.md` por projeto
+## Why only `gosto.md` and `receitas.md` per project
 
-A skill é **canônica e genérica**. Cada projeto mantém apenas o que é dele — o gosto (escolhas e recusas) e a régua (paleta, superfícies, componentes). O acervo anti-slop, as fontes e as regras moram aqui, para não duplicar.
+The skill is **canonical and generic**. Each project keeps only what is its own — the taste (choices and rejections) and the rules (palette, surfaces, components). The anti-slop collection, the sources and the rules live here, to avoid duplication.
 
-## Regra de ouro
+## Golden rule
 
-Toda referência vira **conceito** (hierarquia, ritmo, metáfora) — nunca **cópia** (paleta, fonte, layout literal). Referência boa também vem contaminada: aproveite a ideia, descarte a estética.
+Every reference becomes a **concept** (hierarchy, rhythm, metaphor) — never a **copy** (palette, font, literal layout). Good references come contaminated too: take the idea, drop the aesthetic.
