@@ -82,3 +82,9 @@ The skill is **canonical and generic**. Each project keeps only what is its own 
 ## Golden rule
 
 Every reference becomes a **concept** (hierarchy, rhythm, metaphor) — never a **copy** (palette, font, literal layout). Good references come contaminated too: take the idea, drop the aesthetic.
+
+---
+
+## Author
+
+Made by [Guto](https://byguto.com) · [@henrik404](https://x.com/henrik404)

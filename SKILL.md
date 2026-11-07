@@ -88,6 +88,7 @@ Quando o usuário aprovar, grave a identidade em `receitas.md` (paleta, fontes, 
 O usuário considera as perguntas o principal diferencial da skill. Use a ferramenta de perguntas em cada ponto abaixo, com opções concretas e a recomendada primeiro:
 
 - **Modo:** Ajuste, Tela ou Fluxo (ver *Tamanho do pedido*).
+- **Direção (se não estiver clara):** tela nova ou refatorar uma que existe? Confirme antes de seguir (ver *Duas direções*).
 - **Papel da tela:** a frase "Esta tela existe para ___. Ela não é a tela de ___." (ver *Papel da tela*).
 - **Intenção:** o que a tela resolve, em que momento é usada, o que incomoda e o que não pode mudar, além das decisões de produto que só ele toma (quando aparece, o que é pago, o que acontece depois).
 - **Problemas da auditoria:** quais sinais ele quer corrigir e quais são gosto dele. O que for gosto dele vira exceção em `gosto.md`.
@@ -405,3 +406,7 @@ Ao fechar um ciclo, entregue (e confira se nada ficou de fora). No modo Ajuste, 
 - **Lista de correções** — o que a segunda checagem e o olhar de fora encontraram e mudaram.
 - **`gosto.md` atualizado** — escolhas, recusas e referências novas registradas.
 - **(opcional) Figma** — só quando o usuário pedir, depois de aprovar o HTML.
+
+---
+
+Feito por [Guto](https://byguto.com) · [@henrik404](https://x.com/henrik404)
