@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Acervo anti-slop — slop vs. correção</title>
+<title>Anti-slop gallery — slop vs. fix</title>
 <style>
   :root{
     --bg:#12130e; --panel:#1e2017; --well:#232519;
@@ -30,14 +30,14 @@
   .cell{display:flex; flex-direction:column; gap:8px; align-items:flex-start}
   .cell.center{align-items:center; text-align:center}
 
-  /* peças de demonstração */
+  /* demo pieces */
   .bar{width:100%; height:10px; border-radius:6px; background:var(--well)}
   .card{width:100%; border-radius:10px; padding:10px; background:var(--well); font-size:12px; color:var(--ink2)}
   .row{display:flex; gap:8px; width:100%; align-items:center}
   .btn{border-radius:8px; padding:7px 12px; font-size:12px; border:none; color:#111}
   .chip{font-size:10px; padding:3px 9px; border-radius:999px}
 
-  /* ===== SINAIS (SLOP) ===== */
+  /* ===== SIGNALS (SLOP) ===== */
   .grad-bg{background:linear-gradient(135deg,#7a5cff,#3ec6ff); color:#fff; border:none}
   .grad-btn{background:linear-gradient(135deg,#ff9a5c,#ff5ca8); color:#fff; border:none}
   .glow{background:#2b2f26; color:var(--ink); box-shadow:0 0 24px rgba(135,184,92,.6)}
@@ -46,7 +46,7 @@
   .pill{background:var(--accent); color:#111}
   .donut{width:64px; height:64px; border-radius:50%; background:conic-gradient(#87b85c 0 62%, #3a4030 62%); box-shadow:0 0 18px rgba(135,184,92,.4)}
 
-  /* ===== CORREÇÕES ===== */
+  /* ===== FIXES ===== */
   .solid{background:#2b2f26; color:var(--ink)}
   .outline{background:transparent; border:1px solid var(--accent); color:var(--accent)}
   .plain-icon{font-size:15px; color:var(--ink2); background:none; width:auto; height:auto}
@@ -54,7 +54,7 @@
   .skeleton::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent); animation:shimmer 1.4s infinite}
   @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 
-  /* peças adicionais */
+  /* extra pieces */
   .fingernail{position:relative; width:100%; border-radius:10px; padding:14px 10px 10px; background:var(--well); font-size:12px; color:var(--ink2)}
   .fingernail::before{content:""; position:absolute; top:0; left:14px; right:14px; height:12px; border-radius:0 0 7px 7px; background:var(--accent)}
   .grad-text{background:linear-gradient(90deg,#ff9a5c,#ff5ca8); -webkit-background-clip:text; background-clip:text; color:transparent; font-weight:700; font-size:20px}
@@ -66,7 +66,7 @@
   .tile{flex:1; height:26px; border-radius:7px}
   .feature{display:flex; flex-direction:column; align-items:center; gap:6px; width:100%}
 
-  /* peças adicionais 2 */
+  /* extra pieces 2 */
   .saas{background:#f7f7f8; border-radius:8px; padding:10px; width:100%; font-size:12px; color:#3f3f46}
   .saas-card{background:#fff; border:1px solid #e4e4e7; border-radius:6px; padding:8px; margin-top:6px; box-shadow:0 1px 2px rgba(0,0,0,.05); color:#52525b}
   .saas-btn{background:#18181b; color:#fff; border:none; border-radius:6px; padding:6px 10px; font-size:11px}
@@ -78,7 +78,7 @@
   .iconrow{display:flex; gap:12px; align-items:center}
   .ownicon{width:22px; height:22px; color:var(--accent); fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round}
 
-  /* vidro */
+  /* glass */
   .scene{position:relative; width:100%; height:132px; border-radius:10px; overflow:hidden; background:#141a24}
   .scene::before{content:""; position:absolute; inset:-8%;
     background:
@@ -105,174 +105,174 @@
 </style>
 </head>
 <body>
-  <h1>Acervo anti-slop</h1>
-  <p class="sub">O que dá "cara de IA" (esquerda, vermelho) e o que fazer no lugar (direita, verde). Cada par é uma peça real, não uma ilustração.</p>
-  <p class="legend">Abra no navegador e tire print do sinal que quiser anexar. O catálogo completo está em <code>catalogo.md</code>; o checklist rápido em <code>estetica-ia.md</code>.</p>
+  <h1>Anti-slop gallery</h1>
+  <p class="sub">What gives the "AI look" (left, red) and what to do instead (right, green). Each pair is a real piece, not an illustration.</p>
+  <p class="legend">Open it in a browser and screenshot the signal you want to attach. The full catalogue is in <code>catalog.md</code>; the quick checklist in <code>ai-aesthetics.md</code>.</p>
 
   <div class="grid">
 
     <div class="pair">
-      <h2>1. Degradê em tudo</h2>
+      <h2>1. Gradient on everything</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
             <div class="bar grad-bg"></div>
-            <button class="btn grad-btn">Botão</button>
-            <div class="card" style="background:linear-gradient(135deg,#3a2f6b,#1f5f7a)">card em gradiente</div>
+            <button class="btn grad-btn">Button</button>
+            <div class="card" style="background:linear-gradient(135deg,#3a2f6b,#1f5f7a)">gradient card</div>
           </div>
-          <div class="note">Gradiente no fundo, no botão, no card… cada um diferente.</div>
+          <div class="note">Gradient on the background, the button, the card… each one different.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div class="bar" style="background:var(--accent)"></div>
-            <button class="btn solid">Botão</button>
-            <div class="card">card sólido</div>
+            <button class="btn solid">Button</button>
+            <div class="card">solid card</div>
           </div>
-          <div class="note">Cor sólida como base; um único destaque, com significado.</div>
+          <div class="note">Solid colour as the base; a single accent, with meaning.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>2. Glow em tudo × glow focal</h2>
+      <h2>2. Glow on everything × focal glow</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
-            <button class="btn glow">Ação</button>
-            <div class="card glow">card com aura</div>
-            <div class="card glow">outro card com aura</div>
+            <button class="btn glow">Action</button>
+            <div class="card glow">card with an aura</div>
+            <div class="card glow">another card with an aura</div>
           </div>
-          <div class="note">Brilho difuso em tudo, sem fonte de luz — o "aura" genérico de IA.</div>
+          <div class="note">Diffuse glow on everything, with no light source: the generic AI aura.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div class="row" style="gap:10px">
               <span class="glowdot"></span>
-              <span style="font-size:12px; color:var(--ink2)">a luz focal (estrela, cometa)</span>
+              <span style="font-size:12px; color:var(--ink2)">the focal light (star, comet)</span>
             </div>
-            <button class="btn outline">Ação</button>
-            <div class="card">card sem aura</div>
+            <button class="btn outline">Action</button>
+            <div class="card">card with no aura</div>
           </div>
-          <div class="note">Um glow só, com fonte de luz clara; o resto fica sólido.</div>
+          <div class="note">One glow, with a clear light source; the rest stays solid.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>3. Ícone em quadrado tingido</h2>
+      <h2>3. Icon in a tinted square</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
             <div class="row"><span class="sq">✦</span><span class="sq">★</span><span class="sq">⚙</span></div>
           </div>
-          <div class="note">Todo ícone preso num quadradinho colorido que não agrupa nada.</div>
+          <div class="note">Every icon stuck in a small coloured square that groups nothing.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div class="row"><span class="plain-icon">✦</span><span class="plain-icon">★</span><span class="plain-icon">⚙</span></div>
           </div>
-          <div class="note">Ícone solto, na cor do texto. Contêiner só pra identidade (avatar/logo).</div>
+          <div class="note">A bare icon in the text colour. A container only for identity (avatar/logo).</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>4. Tudo centralizado</h2>
+      <h2>4. Everything centred</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell center">
-            <div class="card" style="text-align:center">título centrado<br>parágrafo longo também centrado, que fica difícil de ler</div>
-            <button class="btn solid">Central</button>
+            <div class="card" style="text-align:center">centred title<br>a long paragraph also centred, which is hard to read</div>
+            <button class="btn solid">Centre</button>
           </div>
-          <div class="note">Centro "por padrão", inclusive em texto de leitura.</div>
+          <div class="note">Centred "by default", even in reading text.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
-            <div class="card" style="text-align:left">título à esquerda<br>parágrafo alinhado, que se lê com facilidade</div>
-            <button class="btn solid">Ação</button>
+            <div class="card" style="text-align:left">left-aligned title<br>an aligned paragraph, easy to read</div>
+            <button class="btn solid">Action</button>
           </div>
-          <div class="note">Esquerda pra leitura; centro só no herói/estado vazio.</div>
+          <div class="note">Left for reading; centre only in the hero/empty state.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>5. Pílula sem função</h2>
+      <h2>5. Pill with no function</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
-            <div class="row"><span class="chip pill">agrupar</span><span class="chip pill">novo</span><span class="chip pill">online</span></div>
+            <div class="row"><span class="chip pill">group</span><span class="chip pill">new</span><span class="chip pill">online</span></div>
           </div>
-          <div class="note">Pílulas coloridas que não são estado nem ação.</div>
+          <div class="note">Coloured pills that are neither a state nor an action.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
-            <div class="row"><span style="color:var(--ink2); font-size:12px">texto simples, sem enfeite</span></div>
+            <div class="row"><span style="color:var(--ink2); font-size:12px">plain text, no decoration</span></div>
           </div>
-          <div class="note">Pílula só quando é um estado real (status, filtro ativo).</div>
+          <div class="note">A pill only when it is a real state (status, active filter).</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>6. Gráfico decorado</h2>
+      <h2>6. Decorated chart</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell center">
             <div class="donut"></div>
-            <div style="font-size:11px; color:var(--ink2)">62% com sombra e gradiente</div>
+            <div style="font-size:11px; color:var(--ink2)">62% with shadow and gradient</div>
           </div>
-          <div class="note">Donut pra um único número, ainda com glow.</div>
+          <div class="note">A donut for a single number, with glow on top.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div style="font-size:28px; font-weight:600">62%</div>
-            <div style="font-size:12px; color:var(--ink2)">o dado é o número</div>
+            <div style="font-size:12px; color:var(--ink2)">the data is the number</div>
           </div>
-          <div class="note">Número ou frase. Gráfico só quando há série a comparar.</div>
+          <div class="note">A number or a sentence. A chart only when there is a series to compare.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>7. Ação repetida em cada item</h2>
+      <h2>7. Action repeated on every item</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
-            <div class="row"><span class="card" style="flex:1">item A</span><button class="btn solid">Checar</button></div>
-            <div class="row"><span class="card" style="flex:1">item B</span><button class="btn solid">Checar</button></div>
-            <div class="row"><span class="card" style="flex:1">item C</span><button class="btn solid">Checar</button></div>
+            <div class="row"><span class="card" style="flex:1">item A</span><button class="btn solid">Check</button></div>
+            <div class="row"><span class="card" style="flex:1">item B</span><button class="btn solid">Check</button></div>
+            <div class="row"><span class="card" style="flex:1">item C</span><button class="btn solid">Check</button></div>
           </div>
-          <div class="note">O mesmo botão em cada linha, com o mesmo peso.</div>
+          <div class="note">The same button on every row, with the same weight.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
-            <div class="card">item A — precisa de você</div>
+            <div class="card">item A, needs you</div>
             <div class="card">item B</div>
             <div class="card">item C</div>
-            <button class="btn" style="background:var(--accent); color:#111">Checar (só no que precisa)</button>
+            <button class="btn" style="background:var(--accent); color:#111">Check (only where needed)</button>
           </div>
-          <div class="note">A ação aparece só no estado que pede; uma vez.</div>
+          <div class="note">The action appears only in the state that asks for it; once.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>8. Shimmer em loop (falso carregamento)</h2>
+      <h2>8. Looping shimmer (fake loading)</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
@@ -281,226 +281,226 @@
             <div class="bar skeleton"></div>
             <div class="bar skeleton" style="width:60%"></div>
           </div>
-          <div class="note">Brilho varrendo pra sempre, mesmo sem nada carregando.</div>
+          <div class="note">A sheen sweeping forever, even with nothing loading.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
-            <div class="card">conteúdo carregado</div>
-            <div style="font-size:12px; color:var(--ink3)">shimmer só durante um carregamento real.</div>
+            <div class="card">content loaded</div>
+            <div style="font-size:12px; color:var(--ink3)">shimmer only during real loading.</div>
           </div>
-          <div class="note">Sem movimento de abertura; shimmer = loading de verdade.</div>
+          <div class="note">No opening animation; shimmer = real loading.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>9. Vidro de IA × vidro real</h2>
+      <h2>9. AI glass × real glass</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
             <div class="scene slop">
-              <div class="glass-slop">card de vidro</div>
+              <div class="glass-slop">glass card</div>
             </div>
           </div>
-          <div class="note">Vidro leitoso sobre gradiente liso: não há nada atrás para ver; borda + glow fazem o resto.</div>
+          <div class="note">Milky glass over a flat gradient: there is nothing behind to see; border + glow do the rest.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div class="scene">
-              <div class="glass-real">card de vidro</div>
+              <div class="glass-real">glass card</div>
             </div>
           </div>
-          <div class="note">O fundo aparece (formas, cor); luz na borda de cima, sombra embaixo, texto com contraste. Receita em <code>vidro.md</code>.</div>
+          <div class="note">The background shows (shapes, colour); light on the top edge, shadow below, text with contrast. Recipe in <code>glass.md</code>.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>10. Card "unha" (aba colorida)</h2>
+      <h2>10. Fingernail card (coloured tab)</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
-            <div class="fingernail">card com aba colorida</div>
+            <div class="fingernail">card with a coloured tab</div>
           </div>
-          <div class="note">Uma "unha" colorida no topo que não marca nada.</div>
+          <div class="note">A coloured "fingernail" on top that marks nothing.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
-            <div class="card">card limpo</div>
+            <div class="card">clean card</div>
           </div>
-          <div class="note">Sem aba; o conteúdo e o espaçamento definem o card.</div>
+          <div class="note">No tab; content and spacing define the card.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>11. Arco-íris de cores</h2>
+      <h2>11. Rainbow of colours</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
             <div class="row"><div class="tile" style="background:#7a5cff"></div><div class="tile" style="background:#3ec6ff"></div><div class="tile" style="background:#ff9a5c"></div><div class="tile" style="background:#ff5ca8"></div></div>
           </div>
-          <div class="note">Cores que não significam nada, só para diferenciar.</div>
+          <div class="note">Colours that mean nothing, only to tell things apart.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div class="row"><div class="tile" style="background:#2b2f26"></div><div class="tile" style="background:#2b2f26"></div><div class="tile" style="background:var(--accent)"></div><div class="tile" style="background:#2b2f26"></div></div>
           </div>
-          <div class="note">Neutro + um destaque; cor só quando o dado pede (70-30-10).</div>
+          <div class="note">Neutral + one accent; colour only when the data asks for it (70-30-10).</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>12. Badge de status pulsando</h2>
+      <h2>12. Pulsing status badge</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
-            <span class="pulse">ativo</span>
-            <span class="pulse" style="background:var(--warn)">verificado</span>
+            <span class="pulse">active</span>
+            <span class="pulse" style="background:var(--warn)">verified</span>
           </div>
-          <div class="note">Badge que nunca muda — se não estivesse ativo, nem aparecia.</div>
+          <div class="note">A badge that never changes: if it were not active, it would not be showing.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
-            <span style="font-size:12px; color:var(--ink2)">sem badge; status só quando varia</span>
+            <span style="font-size:12px; color:var(--ink2)">no badge; status only when it varies</span>
           </div>
-          <div class="note">Estado parado fica parado; movimento sinaliza o que importa.</div>
+          <div class="note">A still state stays still; movement signals what matters.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>13. Emoji em tudo</h2>
+      <h2>13. Emoji on everything</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
-            <div style="font-size:14px">Bem-vindo ✨</div>
-            <button class="btn solid">🚀 Começar</button>
-            <div style="font-size:12px; color:var(--ink2)">😊 pronto!</div>
+            <div style="font-size:14px">Welcome ✨</div>
+            <button class="btn solid">🚀 Get started</button>
+            <div style="font-size:12px; color:var(--ink2)">😊 done!</div>
           </div>
-          <div class="note">Emoji decorando sem dizer nada.</div>
+          <div class="note">Emoji decorating without saying anything.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
-            <div style="font-size:14px">Bem-vindo</div>
-            <button class="btn solid">Começar</button>
-            <div style="font-size:12px; color:var(--ink2)">pronto</div>
+            <div style="font-size:14px">Welcome</div>
+            <button class="btn solid">Get started</button>
+            <div style="font-size:12px; color:var(--ink2)">done</div>
           </div>
-          <div class="note">O visual e o texto já comunicam.</div>
+          <div class="note">The visual and the text already communicate.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>14. Texto em gradiente</h2>
+      <h2>14. Gradient text</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
             <span class="grad-text">Supercharge</span>
           </div>
-          <div class="note">Cor mudando ao longo do texto, só por decoração.</div>
+          <div class="note">Colour changing along the text, for decoration only.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <span style="font-size:20px; font-weight:700; color:var(--ink)">Supercharge</span>
           </div>
-          <div class="note">Cor sólida; ênfase por tamanho e peso.</div>
+          <div class="note">Solid colour; emphasis by size and weight.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>15. Paleta de IA (roxo/ciano + neon)</h2>
+      <h2>15. AI palette (purple/cyan + neon)</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
-            <div class="card purple-bg" style="color:#fff">título</div>
-            <button class="btn neon">ação</button>
+            <div class="card purple-bg" style="color:#fff">title</div>
+            <button class="btn neon">action</button>
           </div>
-          <div class="note">Roxo em gradiente + borda ciano brilhando: o "look IA".</div>
+          <div class="note">Purple in gradient + a glowing cyan border: the "AI look".</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
-            <div class="card">título</div>
-            <button class="btn" style="background:var(--accent); color:#111">ação</button>
+            <div class="card">title</div>
+            <button class="btn" style="background:var(--accent); color:#111">action</button>
           </div>
-          <div class="note">Paleta neutra com um destaque só, da identidade do produto.</div>
+          <div class="note">A neutral palette with one accent, from the product's identity.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>16. Ícone em quadrado sobre o título</h2>
+      <h2>16. Icon in a square over the title</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell feature">
             <span class="sq">✦</span>
-            <div style="font-size:12px; font-weight:600">Recurso</div>
-            <div style="font-size:11px; color:var(--ink3); text-align:center">descrição do recurso aqui</div>
+            <div style="font-size:12px; font-weight:600">Feature</div>
+            <div style="font-size:11px; color:var(--ink3); text-align:center">feature description here</div>
           </div>
-          <div class="note">O card de feature clássico: ícone em quadrado centrado acima.</div>
+          <div class="note">The classic feature card: an icon in a square, centred above.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div class="row" style="align-items:center">
               <span class="plain-icon">✦</span>
-              <span style="font-size:12px; font-weight:600">Recurso</span>
+              <span style="font-size:12px; font-weight:600">Feature</span>
             </div>
-            <div style="font-size:11px; color:var(--ink3)">descrição do recurso aqui</div>
+            <div style="font-size:11px; color:var(--ink3)">feature description here</div>
           </div>
-          <div class="note">Ícone ao lado do título, sem contêiner.</div>
+          <div class="note">Icon beside the title, no container.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>17. Look "shadcn / default SaaS"</h2>
+      <h2>17. The "shadcn / default SaaS" look</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
             <div class="saas">
-              <div class="saas-card" style="margin-top:0">fundo cinza-neutro + card branco</div>
-              <div class="saas-card">canto arredondado + sombra sutil</div>
-              <button class="saas-btn" style="margin-top:6px">Botão</button>
+              <div class="saas-card" style="margin-top:0">neutral grey background + white card</div>
+              <div class="saas-card">rounded corner + subtle shadow</div>
+              <button class="saas-btn" style="margin-top:6px">Button</button>
             </div>
           </div>
-          <div class="note">O default de shadcn/ui/Bootstrap/Tailwind: cinza, cantos iguais, sombra leve, Inter. Tudo sem customizar vira igual.</div>
+          <div class="note">The default of shadcn/ui/Bootstrap/Tailwind: grey, equal corners, light shadow, Inter. Left uncustomised, everything looks the same.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div class="card" style="background:var(--panel); border:1px solid #3a4030; color:var(--ink)">
-              <div style="color:var(--accent); font-weight:600; margin-bottom:4px">Título da identidade</div>
-              superfície e tom próprios do produto
+              <div style="color:var(--accent); font-weight:600; margin-bottom:4px">Identity title</div>
+              the product's own surface and tone
             </div>
-            <button class="btn" style="background:var(--accent); color:#111">Botão</button>
+            <button class="btn" style="background:var(--accent); color:#111">Button</button>
           </div>
-          <div class="note">Forma, cor e tipografia vêm da identidade — não da média estatística da biblioteca.</div>
+          <div class="note">Shape, colour and typography come from the identity, not from the library's statistical average.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>18. Esqueleto padrão de landing</h2>
+      <h2>18. Default landing skeleton</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
@@ -512,10 +512,10 @@
               <div class="bar" style="background:#2b2f26"></div>
             </div>
           </div>
-          <div class="note">Hero → features → features → CTA → footer, sempre na mesma ordem. O template dita o conteúdo.</div>
+          <div class="note">Hero → features → features → CTA → footer, always in the same order. The template dictates the content.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div class="landing">
               <div class="row" style="align-items:flex-start; gap:8px">
@@ -529,35 +529,35 @@
               <div class="bar" style="width:45%"></div>
             </div>
           </div>
-          <div class="note">O conteúdo decide a ordem e o peso — uma prova concreta vale mais que três grades de features.</div>
+          <div class="note">The content decides the order and the weight: one concrete proof is worth more than three feature grids.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>19. Verde-esmeralda é o novo roxo</h2>
+      <h2>19. Emerald green is the new purple</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
           <div class="cell">
-            <div class="card emerald">card em gradiente esmeralda</div>
-            <button class="btn emerald" style="font-weight:600">Ação</button>
+            <div class="card emerald">emerald gradient card</div>
+            <button class="btn emerald" style="font-weight:600">Action</button>
           </div>
-          <div class="note">A cor de destaque da moda trocou de roxo para esmeralda — o default continua sendo default.</div>
+          <div class="note">The fashionable accent colour moved from purple to emerald: the default is still a default.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
-            <div class="card">card neutro</div>
-            <button class="btn" style="background:var(--accent); color:#111">Ação</button>
+            <div class="card">neutral card</div>
+            <button class="btn" style="background:var(--accent); color:#111">Action</button>
           </div>
-          <div class="note">A cor vem da identidade do produto, não da moda do modelo.</div>
+          <div class="note">The colour comes from the product's identity, not from the model's fashion.</div>
         </div>
       </div>
     </div>
 
     <div class="pair">
-      <h2>20. Ícones genéricos de IA</h2>
+      <h2>20. Generic AI icons</h2>
       <div class="cols">
         <div class="col">
           <div class="tag bad">Slop</div>
@@ -569,10 +569,10 @@
               <span class="sq" style="background:#ff9a5c; color:#111">★</span>
             </div>
           </div>
-          <div class="note">Brilhos, varinhas e símbolos soltos em quadrados coloridos — cada um de um jeito.</div>
+          <div class="note">Sparkles, wands and loose symbols in coloured squares, each in a different style.</div>
         </div>
         <div class="col">
-          <div class="tag good">Correção</div>
+          <div class="tag good">Fix</div>
           <div class="cell">
             <div class="iconrow">
               <svg class="ownicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z"/></svg>
@@ -581,7 +581,7 @@
               <svg class="ownicon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.5-7-9a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 4.5-7 9-7 9z"/></svg>
             </div>
           </div>
-          <div class="note">SVGs próprios: mesmo traço, mesma grade, mesma cor da identidade — um símbolo por função.</div>
+          <div class="note">Own SVGs: same stroke, same grid, same identity colour, one symbol per function.</div>
         </div>
       </div>
     </div>
