@@ -145,4 +145,4 @@ Made by [Guto](https://byguto.com) · [@henrik404](https://x.com/henrik404)
 
 The pattern catalogue is adapted from [Impeccable](https://impeccable.style/slop) by Paul Bakaus, with community additions credited in the file.
 
-The skill's text and code are under the [MIT licence](LICENSE). The third-party screenshots in `skills/deslop/inspiration/` and `skills/deslop/reference/slop-examples/` belong to their respective owners, are included for reference and commentary, and are not covered by that licence.
+All rights reserved — see [LICENSE](LICENSE). The skill's text and code may not be used, copied, modified, distributed, or used to build applications without prior written permission from the author. The third-party screenshots in `skills/deslop/inspiration/` and `skills/deslop/reference/slop-examples/` belong to their respective owners, are included for reference and commentary, and are not covered by that licence.
